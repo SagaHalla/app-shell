@@ -50,3 +50,8 @@ Workbench module. Synthetic loopback Chromium checks passed for the actual Svelt
 panel and BFF projection, denial clearing, literal HTML, empty/mobile states and
 unmount. Eleven module/panel tests and strict TypeScript source checks passed.
 Screenshots and browser log are retained under verification/pipeline-panel.
+
+The browser rehearsal also switches workspace during an in-flight request and
+confirms the delayed prior-workspace response is ignored. It uses synthetic
+session and upstream adapters; live Clerk JWT minting and host PostgreSQL are
+separate from this rehearsal. The user-app includes portable rehearsal scripts.
