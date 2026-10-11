@@ -69,3 +69,10 @@ Serve the logo from each app’s `static/` (`/sagahalla-logo.png`, `/kviser-mark
 ## License
 
 MIT © SagaHalla
+
+## Workbench module foundation
+
+The optional `@saga/app-shell/workbench` subpath provides a provisional native
+module registry; `@saga/app-shell/workbench/pipeline` provides read-only Pipeline
+registration and a host-authenticated provider seam. Existing chrome is unchanged.
+See [scope, trust boundary and remaining integration](docs/WORKBENCH_MODULES.md).
