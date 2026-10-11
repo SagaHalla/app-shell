@@ -69,3 +69,10 @@ test('lifecycle concurrency rejects reentry while artifact verification waits', 
   assert.throws(()=>r.stage(module('oracle')),/busy/);await assert.rejects(r.disable('plans'),/busy/);
   release();await pending;assert.equal(r.list().length,1);
 });
+import { reviewPage } from '../src/lib/workbench/reviewPage';
+test('panel read model rejects another workspace and duplicate rows',()=>{
+  const body={contract_version:1,live_intake_enabled:false,reviews:{workspace_id:'synthetic',workspace:{name:'Synthetic'},truncated:false,entries:[{review_id:'one',title:'<script>literal</script>',policy_current:false,decision:null,promoted:false}]}};
+  assert.equal(reviewPage(body,'synthetic').entries[0].title,'<script>literal</script>');
+  assert.throws(()=>reviewPage(body,'other'));
+  assert.throws(()=>reviewPage({...body,reviews:{...body.reviews,entries:[...body.reviews.entries,...body.reviews.entries]}},'synthetic'));
+});

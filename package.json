@@ -20,7 +20,9 @@
     "./components/AppChrome.svelte": "./src/lib/components/AppChrome.svelte",
     "./components/UserMenu.svelte": "./src/lib/components/UserMenu.svelte",
     "./workbench": "./src/lib/workbench/registry.ts",
-    "./workbench/pipeline": "./src/lib/workbench/pipeline.ts"
+    "./workbench/pipeline": "./src/lib/workbench/pipeline.ts",
+    "./components/PipelineReviews.svelte": "./src/lib/components/PipelineReviews.svelte",
+    "./workbench/reviewPage": "./src/lib/workbench/reviewPage.ts"
   },
   "files": [
     "src",

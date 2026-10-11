@@ -34,3 +34,19 @@ then rehearse with synthetic host mappings before reviewing live activation.
 Validation: `tsx --test tests/workbench.test.ts`; strict TypeScript checking of
 both workbench source files. Tests use synthetic providers and artifact verifier
 callbacks. They do not prove browser rendering or actual artifact-signature trust.
+
+## Read-only panel and BFF integration slice
+
+`@saga/app-shell/components/PipelineReviews.svelte` renders the bounded BFF review
+projection. It clears prior rows while reloading, ignores requests completed after
+unmount/workspace change, escapes titles, and separates recorded approval from
+opportunity creation. Refresh rechecks host membership through the BFF. It offers
+no review mutation, promotion or GAME acceptance controls.
+
+This supersedes the previous “no rendered panel” status. The user-app source adds
+a disabled-by-default BFF route and gated preview page. Product navigation and
+module-registry activation remain pending; the preview is not an activated
+Workbench module. Synthetic loopback Chromium checks passed for the actual Svelte
+panel and BFF projection, denial clearing, literal HTML, empty/mobile states and
+unmount. Eleven module/panel tests and strict TypeScript source checks passed.
+Screenshots and browser log are retained under verification/pipeline-panel.
