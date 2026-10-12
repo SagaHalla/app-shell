@@ -69,3 +69,14 @@ Serve the logo from each app’s `static/` (`/sagahalla-logo.png`, `/kviser-mark
 ## License
 
 MIT © SagaHalla
+
+## Shared theme
+
+Import `@saga/app-shell/theme/sagahalla.css` independently of app chrome. It
+provides semantic CSS variables for SagaHalla colors, typography and common
+radii, without Tailwind, Svelte, authentication or global element styles.
+Consumers load their licensed font assets and map variables to their own
+Tailwind theme; other brands can override variables in their scoped styles.
+Keep financial/status colors and layout rules in the relevant application.
+The SagaHalla website workspace carries a reproducible copy via
+`scripts/sync-theme.py`; do not edit that generated copy independently.

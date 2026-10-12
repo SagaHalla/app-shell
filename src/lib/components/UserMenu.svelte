@@ -111,7 +111,7 @@
 <div class="relative flex items-center gap-3" data-user-menu>
 	<button
 		type="button"
-		class="text-sm font-medium text-zinc-400 no-underline transition-colors hover:text-[#ce711e] disabled:opacity-60"
+		class="text-sm font-medium text-zinc-400 no-underline transition-colors hover:text-[var(--saga-accent,#ce711e)] disabled:opacity-60"
 		disabled={busy}
 		onclick={signOut}
 	>
@@ -119,7 +119,7 @@
 	</button>
 	<button
 		type="button"
-		class="flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-full border border-[#ce711e]/50 bg-[#ce711e]/15 text-sm font-semibold text-[#ce711e]"
+		class="flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-full border border-[#ce711e]/50 bg-[var(--saga-accent,#ce711e)]/15 text-sm font-semibold text-[var(--saga-accent,#ce711e)]"
 		aria-haspopup="menu"
 		aria-expanded={open}
 		aria-label="Account"
