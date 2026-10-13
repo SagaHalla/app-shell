@@ -1,5 +1,7 @@
 /* SagaHalla shared tokens. Layout and font asset loading belong to consumers. */
 :root {
+  /* Let native controls and popup menus use the dark platform palette. */
+  color-scheme: dark;
   --saga-bg: #0a0a0f;
   --saga-accent: #ce711e;
   --saga-accent-hover: #e6812e;
