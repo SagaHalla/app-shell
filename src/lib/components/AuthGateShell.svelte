@@ -20,7 +20,7 @@
 		logoSrc = '/sagahalla-logo.png',
 		logoAlt = 'SagaHalla',
 		homeHref = 'https://sagahalla.com',
-		accentClass = 'text-[#ce711e]',
+		accentClass = 'text-[var(--saga-accent,#ce711e)]',
 		children,
 		footer
 	} = $props();

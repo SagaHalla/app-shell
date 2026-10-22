@@ -1,0 +1,65 @@
+TAP version 13
+# Subtest: independent module registrations and optional absence
+ok 1 - independent module registrations and optional absence
+  ---
+  duration_ms: 1.453164
+  ...
+# Subtest: required dependencies, provider versions and capability expansion block loading
+ok 2 - required dependencies, provider versions and capability expansion block loading
+  ---
+  duration_ms: 0.460475
+  ...
+# Subtest: artifact verification happens before execution
+ok 3 - artifact verification happens before execution
+  ---
+  duration_ms: 0.145763
+  ...
+# Subtest: cycles and foreign routes rejected
+ok 4 - cycles and foreign routes rejected
+  ---
+  duration_ms: 0.238169
+  ...
+# Subtest: failed upgrade retains healthy old module and unrelated modules
+ok 5 - failed upgrade retains healthy old module and unrelated modules
+  ---
+  duration_ms: 0.370383
+  ...
+# Subtest: required active dependency cannot be disabled
+ok 6 - required active dependency cannot be disabled
+  ---
+  duration_ms: 0.169595
+  ...
+# Subtest: manifest snapshots cannot mutate active registrations
+ok 7 - manifest snapshots cannot mutate active registrations
+  ---
+  duration_ms: 0.152062
+  ...
+# Subtest: Pipeline reads only through shell provider; unload only disposes UI
+ok 8 - Pipeline reads only through shell provider; unload only disposes UI
+  ---
+  duration_ms: 0.241999
+  ...
+# Subtest: read provider accepts only workspace UUID and expected read-only contract
+ok 9 - read provider accepts only workspace UUID and expected read-only contract
+  ---
+  duration_ms: 0.417546
+  ...
+# Subtest: lifecycle concurrency rejects reentry while artifact verification waits
+ok 10 - lifecycle concurrency rejects reentry while artifact verification waits
+  ---
+  duration_ms: 0.394827
+  ...
+# Subtest: panel read model rejects another workspace and duplicate rows
+ok 11 - panel read model rejects another workspace and duplicate rows
+  ---
+  duration_ms: 0.199127
+  ...
+1..11
+# tests 11
+# suites 0
+# pass 11
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 127.591228

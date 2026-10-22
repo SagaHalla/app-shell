@@ -27,7 +27,7 @@
 		homeHref = 'https://sagahalla.com',
 		logoSrc = '/sagahalla-logo.png',
 		logoAlt = 'SagaHalla',
-		accentClass = 'text-[#ce711e]',
+		accentClass = 'text-[var(--saga-accent,#ce711e)]',
 		email = '',
 		afterSignOutUrl = 'https://sagahalla.com',
 		signOutHref = '/logout',

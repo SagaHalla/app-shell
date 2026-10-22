@@ -1,0 +1,1 @@
+PASS: actual Svelte panel + BFF projection over loopback HTTP; retained approval distinct from creation; literal HTML escaped; refresh revocation clears rows; empty/mobile states; stale prior-workspace response ignored; UI unmount; no browser errors. Synthetic auth/upstream only; no live Clerk or host database.

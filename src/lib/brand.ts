@@ -23,8 +23,8 @@ export const SAGAHALLA_BRAND: BrandTheme = {
 	siteHome: 'https://sagahalla.com',
 	logoSrc: '/sagahalla-logo.png',
 	logoAlt: 'SagaHalla',
-	accent: '#ce711e',
-	accentHover: '#e6812e'
+	accent: 'var(--saga-accent, #ce711e)',
+	accentHover: 'var(--saga-accent-hover, #e6812e)'
 };
 
 /** Placeholder Kviser Institute brand — visual system not settled. */
