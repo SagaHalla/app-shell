@@ -76,3 +76,29 @@ test('panel read model rejects another workspace and duplicate rows',()=>{
   assert.throws(()=>reviewPage(body,'other'));
   assert.throws(()=>reviewPage({...body,reviews:{...body.reviews,entries:[...body.reviews.entries,...body.reviews.entries]}},'synthetic'));
 });
+
+test('activation checks the active dependency graph rather than staged future replacements', async()=>{
+  const r=registry();
+  r.stage(module('base'));await r.activate('base');
+  r.stage(module('panel',{dependencies:['base']}));await r.activate('panel');
+  // This future panel version would remove the dependency, but it is not active yet.
+  r.stage(module('panel'));
+  let loaded=false;
+  const candidate=module('base',{dependencies:['panel']});
+  candidate.load=async()=>{loaded=true;return {health:async()=>true,dispose:async()=>{}}};
+  r.stage(candidate);
+  await assert.rejects(r.activate('base'),/cycle/);
+  assert.equal(loaded,false);
+  assert.deepEqual(r.list().find(row=>row.manifest.id==='base')!.manifest.dependencies,[]);
+});
+
+
+test('staged upgrades can activate once the old dependency edge is removed', async()=>{
+  const r=registry();
+  r.stage(module('base'));await r.activate('base');
+  r.stage(module('panel',{dependencies:['base']}));await r.activate('panel');
+  r.stage(module('panel'));r.stage(module('base',{dependencies:['panel']}));
+  await r.activate('panel');await r.activate('base');
+  assert.deepEqual(r.list().find(row=>row.manifest.id==='base')!.manifest.dependencies,['panel']);
+  await assert.rejects(r.disable('panel'),/dependent/);
+});

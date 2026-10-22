@@ -55,3 +55,15 @@ The browser rehearsal also switches workspace during an in-flight request and
 confirms the delayed prior-workspace response is ignored. It uses synthetic
 session and upstream adapters; live Clerk JWT minting and host PostgreSQL are
 separate from this rehearsal. The user-app includes portable rehearsal scripts.
+
+
+## Product branch review — 2026-10-22
+The combined review retains the shared theme export and registry/panel exports.
+Activation checks the resulting active dependency graph, ignoring unrelated staged
+future replacements; a staged replacement cannot hide an active edge and create
+a cycle. Regression tests cover refusal before load and the permitted upgrade
+order after removing the old edge. All 13 module tests pass; strict workbench
+TypeScript checks and client/server compilation of the four affected components
+pass. Package dry-run verifies every export target is included. These checks used
+existing workspace tooling, not a fresh isolated dependency install. Historical
+screenshots above were not rerun; no authenticated/live deployment is established.

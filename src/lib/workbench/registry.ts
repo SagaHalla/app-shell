@@ -37,14 +37,21 @@ export class ModuleRegistry {
     }
   }
 
-  private checkCycles() {
+  private checkCycles(candidate?: Registration) {
     const visit = (id: string, path: Set<string>) => {
       if (path.has(id)) throw new Error('Module dependency cycle');
-      const registration = this.staged.get(id) ?? this.active.get(id)?.registration;
+      // Activation must validate the resulting active graph. Other staged
+      // replacements are only future intent and must not hide active edges.
+      const registration = candidate
+        ? (id === candidate.manifest.id ? candidate : this.active.get(id)?.registration)
+        : this.staged.get(id) ?? this.active.get(id)?.registration;
       if (!registration) return;
       for (const dependency of registration.manifest.dependencies) visit(dependency, new Set([...path, id]));
     };
-    for (const id of this.staged.keys()) visit(id, new Set());
+    const roots = candidate
+      ? [...this.active.keys(), candidate.manifest.id]
+      : this.staged.keys();
+    for (const id of roots) visit(id, new Set());
   }
 
   async activate(id: string) {
@@ -61,6 +68,7 @@ export class ModuleRegistry {
       for (const [otherId, other] of this.active) {
         if (otherId !== id && other.registration.manifest.routes.some(route => m.routes.includes(route))) throw new Error('Module route collision');
       }
+      this.checkCycles(candidate);
       // The trusted host verifies the actual artifact before any module code executes.
       if (!await this.policy.verifyArtifact(structuredClone(m))) throw new Error('Module artifact unverified');
       instance = await candidate.load();

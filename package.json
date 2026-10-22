@@ -22,7 +22,8 @@
     "./workbench": "./src/lib/workbench/registry.ts",
     "./workbench/pipeline": "./src/lib/workbench/pipeline.ts",
     "./components/PipelineReviews.svelte": "./src/lib/components/PipelineReviews.svelte",
-    "./workbench/reviewPage": "./src/lib/workbench/reviewPage.ts"
+    "./workbench/reviewPage": "./src/lib/workbench/reviewPage.ts",
+    "./theme/sagahalla.css": "./src/lib/theme/sagahalla.css"
   },
   "files": [
     "src",
