@@ -1,0 +1,14 @@
+{
+  "schema_version": "product-spec-inventory.v0.1",
+  "product": "app-shell",
+  "scope": "Configured current formal-spec roots; excludes examples, tests, historical reviews and fixtures",
+  "status_semantics": "Document lifecycle only; no implementation, acceptance, priority or deployment inference",
+  "related_contract_homes": [
+    {
+      "label": "sagahalla-workbench-core",
+      "url": "https://gitlab.com/sagahalla-game/game-spec/-/blob/main/specs/sagahalla-workbench-core/spec.yaml",
+      "scope": "Related versioned contract in GAME Spec; no runtime/deployment claim"
+    }
+  ],
+  "specs": []
+}

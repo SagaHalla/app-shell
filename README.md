@@ -1,5 +1,7 @@
 # @saga/app-shell
 
+Specification lifecycle and deferred research: [spec and document index](docs/SPECS.md). Document state does not establish live GAME acceptance or deployment.
+
 Brandable **Svelte 5** + **svelte-clerk** chrome for SagaHalla product apps and
 sister products (e.g. Kviser Institute).
 
