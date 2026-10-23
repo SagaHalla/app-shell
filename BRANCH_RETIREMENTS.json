@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "policy": "Retired branches are preserved under annotated archive tags; content proof distinguishes incorporation from commit ancestry.",
+  "retirements": [
+    {
+      "branch": "codex/shared-theme",
+      "tip": "bd52d2842ea6ca7b005c09baaf0b4912424d9f42",
+      "disposition": "integrated",
+      "retired_on": "2026-10-22",
+      "reason": "All six changed theme/component files match main byte-for-byte; original package fields/exports and shared-theme documentation are retained. Integrated via 96e5713 and merge 2eba04d; no code merge needed.",
+      "successor": "origin/main",
+      "successor_tip": "4bf145358548cb85cbd071332526e30bc09262a5",
+      "archive_tag": "archive/integrated/codex/shared-theme",
+      "merge_required": false
+    }
+  ]
+}
