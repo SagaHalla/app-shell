@@ -13,6 +13,7 @@ No current formal YAML spec was found in the configured roots. This does not est
 ## Document organization
 
 - [Organization convention](SPEC_ORGANIZATION.md)
+- [Dated review evidence](reviews/) — historical source/test evidence, not current spec discovery
 
 Existing canonical and legacy paths are preserved. Do not sort specs into live/draft/deferred directories; keep status in metadata and work/release records.
 

@@ -1,0 +1,44 @@
+{
+  "source_branch": "codex/shared-theme",
+  "source_tip": "bd52d2842ea6ca7b005c09baaf0b4912424d9f42",
+  "reviewed_mainline": "4bf145358548cb85cbd071332526e30bc09262a5",
+  "integrating_commit": "96e5713",
+  "already_merged_via": "2eba04d",
+  "runtime_file_proof": [
+    {
+      "path": "src/lib/brand.ts",
+      "identical_to_main": true,
+      "sha256": "27d939a20b45a16547e534588274b39971174d762a5f47779fd2507ba52557a1"
+    },
+    {
+      "path": "src/lib/clerkAppearance.ts",
+      "identical_to_main": true,
+      "sha256": "f8cf28592bb6e6a8899f16b690d86e55dc40b7c5efe946f836936575c43a703f"
+    },
+    {
+      "path": "src/lib/components/AppChrome.svelte",
+      "identical_to_main": true,
+      "sha256": "6d0bae5ac30128f8ab7609fe433cd22784c78360700121e002fb90ef20898e38"
+    },
+    {
+      "path": "src/lib/components/AuthGateShell.svelte",
+      "identical_to_main": true,
+      "sha256": "4ff4a07901112bae1b7643f0c76ade672add0996d932eb9d6652bab38fbe1734"
+    },
+    {
+      "path": "src/lib/components/UserMenu.svelte",
+      "identical_to_main": true,
+      "sha256": "997a1481d2ba60b00760839ca8669ea424809eac8e2936b88ac367dc7e0b4808"
+    },
+    {
+      "path": "src/lib/theme/sagahalla.css",
+      "identical_to_main": true,
+      "sha256": "fbb46a7bef3894e58b7a4d846f0f184fbe9c6d33b94c0e72a0a2c992e2c4de40"
+    }
+  ],
+  "package_existing_fields_and_exports_retained": true,
+  "shared_theme_readme_section_identical": true,
+  "disposition": "fully_integrated_archive_remote_branch",
+  "runtime_change": false,
+  "deployment_change": false
+}
